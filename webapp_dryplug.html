@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DryPlug Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ton contenu existant HTML ici (header, produits, etc.) -->
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
+
+  <style>
+    .filters select {
+      cursor: pointer;
+    }
+    #modal img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    #modal #modalPrice, #modalSizes {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--primary);
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CaliShop</h1>
+  </header>
+
+  <div class="hero">
+    <h2></h2>
+  </div>
+
+  <div class="filters">
+    <select onchange="filterCategory(this.value)">
+      <option value="all">Toutes les catégories</option>
+      <option value="Indica">Indica</option>
+      <option value="Hybride">Hybride</option>
+    </select>
+    <select onchange="filterFarm(this.value)">
+      <option value="all">Toutes les farms</option>
+      <option value="EzFarm">EzFarm</option>
+      <option value="HASHTAG 59/62">HASHTAG 59/62</option>
+    </select>
+  </div>
+
+  <section class="grid">
+    <div class="product" data-category="Hybride" data-farm="HASHTAG 59/62" onclick="openModal('🏆🚀​MOUSSE PREMIUM🚀​🏆', 'HASHTAG 59/62', '5€/g', '10g = 50€', 'https://i.imgur.com/6BaK2dP.jpeg')">
+      <img src="https://i.imgur.com/6BaK2dP.jpeg" alt="🏆🚀​MOUSSE PREMIUM🚀​🏆">
+      <div class="info">
+        <h3>🏆🚀​MOUSSE PREMIUM🚀​🏆</h3>
+        <div class="origin">HASHTAG 59/62</div>
+      </div>
+    </div>
+
+    <div class="product" data-category="Indica" data-farm="EzFarm" onclick="openModal('👽​Northen Light👽​​', 'EzFarm', '10€/g', '2g = 20€\n5g = 45€\n10g = 85€', 'https://i.imgur.com/kd9kEbJ.jpeg')">
+      <img src="https://i.imgur.com/kd9kEbJ.jpeg" alt="👽​Northen Light👽">
+      <div class="info">
+        <h3>👽​Northen Light👽</h3>
+        <div class="origin">EzFarm</div>
+      </div>
+    </div>
+
+    <div class="product" data-category="Hybride" data-farm="EzFarm" onclick="openModal('🍪​Lemon cherry cookies🍪​', 'EzFarm', '15€/g', '2g = 30€\n5g = 70€\n10g = 135€', 'https://zupimages.net/up/25/29/xmaq.jpg')">
+      <img src="https://zupimages.net/up/25/29/xmaq.jpg" alt="🍪​Lemon cherry cookies🍪">
+      <div class="info">
+        <h3>🍪​Lemon cherry cookies🍪​</h3>
+        <div class="origin">EzFarm</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © 2025 CaliShop19 • Pour commander, contactez <strong>@Ezoor19</strong>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000a; backdrop-filter: blur(4px); align-items:center; justify-content:center;">
+    <div style="background:#1b1e29; padding:20px; border-radius:12px; max-width:90%; width:400px; color:white; text-align:center;">
+      <img id="modalImage" src="" alt="Produit">
+      <h2 id="modalTitle"></h2>
+      <p id="modalOrigin"></p>
+      <p id="modalPrice"></p>
+      <pre id="modalSizes"></pre>
+      <p style="margin-top: 10px; font-size: 14px; color: var(--primary);">Pour commander, contactez <strong>@Ezoor19</strong></p>
+      <button onclick="closeModal()" style="margin-top: 15px; background:#00e2ff; color:#000; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Fermer</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, origin, price, sizes, imageUrl) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalOrigin').textContent = origin;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalSizes').textContent = sizes;
+      document.getElementById('modalImage').src = imageUrl;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function filterCategory(category) {
+      document.querySelectorAll('.product').forEach(el => {
+        const match = category === 'all' || el.dataset.category === category;
+        el.style.display = match ? 'block' : 'none';
+      });
+    }
+
+    function filterFarm(farm) {
+      document.querySelectorAll('.product').forEach(el => {
+        const match = farm === 'all' || el.dataset.farm.includes(farm);
+        el.style.display = match ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

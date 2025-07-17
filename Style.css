@@ -1,0 +1,135 @@
+:root {
+  --primary: #00e2ff;
+  --dark: #0e1017;
+  --mid: #161927;
+  --card: #1b1e29;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  background-color: var(--mid);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+}
+
+header h1 {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.hero {
+  background: url('https://zupimages.net/up/25/29/j50c.png') no-repeat center center/cover;
+  height: 720px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.hero h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  background: #1f2230;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: scale(1.02);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product .info {
+  padding: 15px;
+}
+
+.product .info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product .info .origin {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.product .info .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.product button {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 0 16px 16px;
+}
+
+.footer {
+  background: var(--mid);
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media (max-width: 500px) {
+  .hero h2 {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
