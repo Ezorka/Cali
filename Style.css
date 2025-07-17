@@ -30,12 +30,30 @@ header h1 {
 }
 
 .hero {
-  background: url('https://zupimages.net/up/25/29/j50c.png') no-repeat center center/cover;
-  height: 720px ;
+  /* Image et placement */
+  background-image: url("https://zupimages.net/up/25/29/j50c.png");
+  background-size: cover;          /* Remplit toute la zone en gardant le ratio */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Conteneur responsive */
+  width: 100%;
+  aspect-ratio: 16 / 9;            /* Laisse le navigateur calculer la hauteur */
+  min-height: 50vh;                /* Sécurise une hauteur mini si l’écran est très large */
+
+  /* Mise en page à l’intérieur du hero */
   display: flex;
   align-items: center;
   justify-content: center;
   text-shadow: 1px 1px 4px #000;
+}
+
+/* Ajustements mobiles : raccourcit le hero pour éviter qu’il prenne tout l’écran */
+@media (max-width: 767px) {
+  .hero {
+    aspect-ratio: 4 / 5;   /* Un peu plus “portrait” et moins haut */
+    min-height: 40vh;
+  }
 }
 
 .hero h2 {

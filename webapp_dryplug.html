@@ -58,16 +58,16 @@
   </div>
 
   <section class="grid">
-    <div class="product" data-category="Hybride" data-farm="HASHTAG 59/62" onclick="openModal('🏆🚀​MOUSSE PREMIUM🚀​🏆', 'HASHTAG 59/62', '5€/g', '10g = 50€', 'https://i.imgur.com/6BaK2dP.jpeg')">
-      <img src="https://i.imgur.com/6BaK2dP.jpeg" alt="🏆🚀​MOUSSE PREMIUM🚀​🏆">
+    <div class="product" data-category="Hybride" data-farm="HASHTAG 59/62" onclick="openModal('🏆🚀​MOUSSE PREMIUM🚀​🏆', 'HASHTAG 59/62', '5€/g', '10g = 50€', 'https://zupimages.net/up/25/29/4tvw.png')">
+      <img src="https://zupimages.net/up/25/29/4tvw.png" alt="🏆🚀​MOUSSE PREMIUM🚀​🏆">
       <div class="info">
         <h3>🏆🚀​MOUSSE PREMIUM🚀​🏆</h3>
         <div class="origin">HASHTAG 59/62</div>
       </div>
     </div>
 
-    <div class="product" data-category="Indica" data-farm="EzFarm" onclick="openModal('👽​Northen Light👽​​', 'EzFarm', '10€/g', '2g = 20€\n5g = 45€\n10g = 85€', 'https://i.imgur.com/kd9kEbJ.jpeg')">
-      <img src="https://i.imgur.com/kd9kEbJ.jpeg" alt="👽​Northen Light👽">
+    <div class="product" data-category="Indica" data-farm="EzFarm" onclick="openModal('👽​Northen Light👽​​', 'EzFarm', '10€/g', '2g = 20€\n5g = 50€\n10g = 100€', 'https://zupimages.net/up/25/29/oto4.png')">
+      <img src="https://zupimages.net/up/25/29/oto4.png" alt="👽​Northen Light👽">
       <div class="info">
         <h3>👽​Northen Light👽</h3>
         <div class="origin">EzFarm</div>
@@ -83,22 +83,28 @@
     </div>
   </section>
 
-  <div class="footer">
-    © 2025 CaliShop19 • Pour commander, contactez <strong>@Ezoor19</strong>
-  </div>
+ <div class="footer">
+  © 2025 CaliShop19 • Pour commander, contactez
+  <a href="https://t.me/ezoor19" target="_blank" style="color: var(--primary); font-weight: bold;">@Ezoor19</a>
+</div>
+
 
   <!-- Modal -->
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000a; backdrop-filter: blur(4px); align-items:center; justify-content:center;">
-    <div style="background:#1b1e29; padding:20px; border-radius:12px; max-width:90%; width:400px; color:white; text-align:center;">
-      <img id="modalImage" src="" alt="Produit">
-      <h2 id="modalTitle"></h2>
-      <p id="modalOrigin"></p>
-      <p id="modalPrice"></p>
-      <pre id="modalSizes"></pre>
-      <p style="margin-top: 10px; font-size: 14px; color: var(--primary);">Pour commander, contactez <strong>@Ezoor19</strong></p>
-      <button onclick="closeModal()" style="margin-top: 15px; background:#00e2ff; color:#000; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Fermer</button>
-    </div>
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000a; backdrop-filter: blur(4px); align-items:center; justify-content:center;">
+  <div style="background:#1b1e29; padding:20px; border-radius:12px; max-width:90%; width:400px; color:white; text-align:center;">
+    <img id="modalImage" src="" alt="Produit">
+    <h2 id="modalTitle"></h2>
+    <p id="modalOrigin"></p>
+    <p id="modalPrice"></p>
+    <pre id="modalSizes"></pre>
+    <p style="margin-top: 10px; font-size: 14px; color: #e74320;">
+      Pour commander, contactez
+      <a href="https://t.me/ezoor19" target="_blank" style="color: var(--primary); font-weight: bold;">@Ezoor19</a>
+    </p>
+    <button onclick="closeModal()" style="margin-top: 15px; background:#00e2ff; color:#000; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Fermer</button>
   </div>
+</div>
+
 
   <script>
     function openModal(title, origin, price, sizes, imageUrl) {
